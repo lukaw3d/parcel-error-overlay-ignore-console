@@ -145,7 +145,7 @@ export function listenToRuntimeErrors(crash: ErrorRecord => void): () => void {
   registerError(window, error => crashWithFramesRunTime(error, false));
   registerPromise(window, error => crashWithFramesRunTime(error, true));
   registerStackTraceLimit();
-  patchConsole('error', error => crashWithFramesRunTime(error, false));
+  // patchConsole('error', error => crashWithFramesRunTime(error, false));
 
   return function stopListening() {
     unregisterStackTraceLimit();
